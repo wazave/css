@@ -1,0 +1,49 @@
+// Variables for spacing 
+$padding: 1rem;
+$grid: 10,20,30,40,50,60,70,80,90,100,25,16.6667,33.3333,66.6667,75;
+
+// The rows have a negative margin which are offset by the padding on the columns.
+%padding {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+%row-margin {
+  margin-left: -$padding;
+  margin-right: -$padding;
+}
+
+// Container
+.container {
+  padding: 0 $padding;
+}
+
+.size-row {
+  &::before,
+  &::after {
+    display: block;
+    content: ' ';
+    clear: both;
+  }
+}
+// Flex row
+.row {
+  /*@extend %row-margin;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+}
+
+  @each $entry in $grid {
+    .f#{floor($entry)} {
+      flex: $entry * 0.1;
+    }
+     ._#{floor($entry)} {
+      width: percentage($entry) * 0.01;
+    }
+  }
+

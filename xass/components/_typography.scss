@@ -1,0 +1,40 @@
+/* Typography
+  =============== */
+
+// HTML base
+html {
+  -webkit-font-smoothing: antialiased;
+  font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
+  font-size: $font-size;
+  margin: 0;
+}
+
+// Body base
+body {
+  color: $font-color;
+  background: $background;
+  font-size: $body-font-size;
+}
+
+h1 {
+  font-weight: $heading-font-weight;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  color: $heading-font-color;
+}
+
+// Link styling
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.white {
+  color: white;
+}
